@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+       
+.calc{
+    text-align: center;
+    margin-left:  480px;
+    margin-top: 30px;
+    width:400px;
+    height:530px;
+    border: 2px solid grey;
+    padding-top: 60px;
+    border-radius: 50px;
+    background-color: rgb(106, 148, 165);
+    box-shadow:1px 1px 10px 1px;
+    
+    
+}
+button{
+   
+    border: solid 2px grey;
+    font-family:monospace;
+    font-size: 30px;
+    width:70px;
+    height: 70px;
+    border-radius: 15px;
+    border: none;
+    box-shadow:1px 1px 10px 1px;
+    
+}
+button:hover{
+   background-color: rgb(180, 178, 178);
+}
+input{
+    border-radius: 30px;
+    width:300px;
+    height: 120px;
+    border: solid 2px  grey;
+    font-size: 30px;
+    box-shadow:1px 1px 10px 1px;
+}
+.c{
+    border-radius: 100px;
+    background-color: rgb(241, 168, 99);
+}
+.c:hover{
+   background-color: rgb(218, 104, 63);
+}
+
+.add{
+    border-radius: 100px;
+} 
+.sub{
+    border-radius: 100px;
+}
+.equal{
+    border-radius: 100px;
+}
+.div{
+    border-radius: 100px;
+}
+.mul{
+    border-radius: 100px;
+}
+.equal{
+    border: 4px solid rgb(100, 100, 100);
+}
+/* .calc{
+    border: solid 2px;
+    width:400px;
+    height:550px;
+} */
+
+    </style>
+    
+</head>
+<body>
+    <div class="calc">
+        <!-- <div class="display"></div> -->
+         <input type="text" id="display" name="display">
+        <br><br><br>
+        <button type="button"class="1" onclick="getValue('1')">1</button>&nbsp;&nbsp;
+        <button type="button"class="2" onclick="getValue('2')">2</button>&nbsp;&nbsp;
+        <button type="button"class="3" onclick="getValue('3')">3</button>&nbsp;&nbsp;
+        <button type="button"class="c" onclick="getValue('c')"><b>c</b></button>
+        <br><br>
+        <button type="button"class="4" onclick="getValue('4')">4</button>&nbsp;&nbsp;
+        <button type="button"class="5" onclick="getValue('5')">5</button>&nbsp;&nbsp;
+        <button type="button"class="6" onclick="getValue('6')">6</button>&nbsp;&nbsp;
+        <button type="button"class="add" onclick="getValue('+')"><b>+</b></button>
+        <br><br>
+        <button type="button"class="7" onclick="getValue('7')">7</button>&nbsp;&nbsp;
+        <button type="button"class="8" onclick="getValue('8')">8</button>&nbsp;&nbsp;
+        <button type="button"class="9" onclick="getValue('9')">9</button>&nbsp;&nbsp;
+        <button type="button"class="sub" onclick="getValue('-')"><b>-</b></button>
+        <br><br>
+        <button type="button"class="mul" onclick="getValue('*')"><b>*</b></button>&nbsp;&nbsp;
+        <button type="button"class="0" onclick="getValue('0')">0</button>&nbsp;&nbsp;
+        <button type="button"class="div" onclick="getValue('/')"><b>/</b></button>&nbsp;&nbsp;
+        <button type="button"class="equal" onclick="getValue('=')"><b>=</b></button>
+    </div>
+    <script>
+        function getValue(a)
+        {
+          const display=document.getElementById("display");
+          if(a=="c")
+          {
+            display.value="";
+          }
+          else if(a=="=")
+          {
+            display.value=eval(display.value)
+          }
+          else{
+            display.value+=a;
+          }
+          console.log(a);
+        }
+    </script>
+</body>
+</html>
